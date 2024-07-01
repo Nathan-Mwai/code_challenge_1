@@ -65,14 +65,17 @@ function calcNetSalary(basicSalary, benefits) {
   }
   const pRef = 2400;
   //Personal relief
-  const nHIF = nhifCalculations(grossSalary);
+ 
   const nSSF2 = ((36000 - 7000) * 6) / 100;
-  const iRef = (nHIF * 15) / 100;
-  // Insurance relief
+  
+ 
   const nSSF1 = `7000` * 0.06;
   // should be less than and equal to 7000
   const grossSalary = basicSalary + benefits;
   //adds basic salary with benefits
+  const nHIF = nhifCalculations(grossSalary);
+  const iRef = (nHIF * 15) / 100;
+   // Insurance relief
   const housingLevy = (grossSalary * 1.5) / 100;
   // calculates amount of housing levy to be deducted from salary
   const aHR = (housingLevy * 15) / 100;
