@@ -25,9 +25,47 @@ function calcNetSalary(basicSalary, benefits) {
       );
     }
   };
+  const nhifCalculations = function nifCalc(health){
+    //Calculates nhif value
+    if(health <= 5999){
+      return 150
+    }else if(health >= 6000 && health <= 7999){
+      return 300
+    }else if(health >= 8000 && health <= 11999){
+      return 400
+    }else if(health >= 12000 && health <=14999){
+      return 500
+    }else if(health >=15000 && health <= 19999){
+      return 600
+    }else if(health >+20000 && health <= 24999){
+      return 750
+    }else if(health >= 25000 && health <= 29999){
+      return 850
+    }else if(health >= 30000 && health <= 34999){
+      return 900
+    }else if(health >= 35000 && health <= 39999){
+      return 950
+    }else if(health >= 40000 && health <= 44999){
+      return 1000
+    }else if(health >= 45000 && health <= 49999){
+      return 1100
+    }else if(health >= 50000 && health <= 59999){
+      return 1200
+    }else if(health >= 60000 && health <= 69999){
+      return 1300
+    }else if(health >= 70000 && health <= 79999){
+      return 1400
+    }else if(health >= 80000 && health <= 89999){
+      return 1500
+    }else if(health >= 90000 && health <= 99999){
+      return 1600
+    }else if(health >= 100000){
+      return 1700
+    }
+  }
   const pRef = 2400;
   //Personal relief
-  const nHIF = 1700;
+  const nHIF = nhifCalculations(grossSalary);
   const nSSF2 = ((36000 - 7000) * 6) / 100;
   const iRef = (nHIF * 15) / 100;
   // Insurance relief
@@ -40,6 +78,7 @@ function calcNetSalary(basicSalary, benefits) {
   const aHR = (housingLevy * 15) / 100;
   //Affordable housing relief
   //calculates gross salary
+
   const tax = taxRatingsPerMonth(grossSalary);
   // Calculate tax (payee)
   const netSalary =

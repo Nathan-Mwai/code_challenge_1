@@ -27,5 +27,5 @@ function grading(marks){
 }
 
 // Example: Student Gradings
-const Bruce = 100;
+const Bruce = 56;
 console.log(grading(Bruce));
